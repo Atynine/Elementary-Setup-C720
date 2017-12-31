@@ -72,7 +72,7 @@ echo "~~~~~~~~~~"
 if sudo apt-add-repository -y "deb http://repository.spotify.com stable non-free"; then
     sudo apt-get update
     if sudo apt-get -y --allow-unauthenticated install spotify-client; then
-         echo "~~~~~~~~~~"
+        echo "~~~~~~~~~~"
         echo "Installed Spotify"
         echo "~~~~~~~~~~"
     else
@@ -85,3 +85,33 @@ else
     echo "Failed to install Spotify"
     echo "~~~~~~~~~~"
 fi
+
+
+#Install PyCharm
+echo "~~~~~~~~~~"
+echo "Installing PyCharm Prerequisites"
+echo "~~~~~~~~~~"
+if sudo apt-get -y install snapd; then
+	echo "~~~~~~~~~~"
+	echo "Installed PyCharm Prerequisites"
+	echo "~~~~~~~~~~"
+	echo "~~~~~~~~~~"
+	echo "Installing PyCharm"
+	echo "~~~~~~~~~~"
+	if sudo snap install pycharm-professional --classic; then
+		echo "~~~~~~~~~~"
+		echo "Installed PyCharm"
+		echo "~~~~~~~~~~"
+	else
+		echo "~~~~~~~~~~"
+		echo "Failed to install PyCharm"
+		echo "~~~~~~~~~~"
+	fi
+else
+	echo "~~~~~~~~~~"
+	echo "Failed to install PyCharm Prerequisites"
+	echo "~~~~~~~~~~"
+fi
+
+#Upgrade all packages
+sudo apt-get upgrade
