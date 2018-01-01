@@ -11,3 +11,4 @@ sudo sh trackpad.sh
 sudo sh keyboard.sh
 sudo sh programs.sh
 sudo sh cleanup.sh
+sudo sh tweaks.sh
