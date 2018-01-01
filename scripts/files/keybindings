@@ -1,0 +1,5 @@
+[/]
+switch-to-workspace-right=['<Primary>Right']
+switch-to-workspace-left=['<Primary>Left']
+move-to-workspace-left=['<Primary><Alt>Left']
+move-to-workspace-right=['<Primary><Alt>Right']
