@@ -29,6 +29,7 @@ install(){
 
 install software-properties-common
 install git
+install keepass2
 
 #Add required repositories
 ##Spotify

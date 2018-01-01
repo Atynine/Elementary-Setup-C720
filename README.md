@@ -7,6 +7,7 @@ Sets Elementary OS preferences and installs software for an Acer C720
 * Rebinds the top row from F-keys to media keys
 
 ## Installs
+* Keepass2
 * PyCharm
 * Spotify
 * Google Chrome
