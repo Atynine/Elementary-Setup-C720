@@ -1,20 +1,44 @@
-#Install software-properties-common
-echo "~~~~~~~~~~"
-echo "Installing software-properties-common"
-echo "~~~~~~~~~~"
-sudo apt-get -y install software-properties-common
-echo "~~~~~~~~~~"
-echo "Installed software-properties-common"
-echo "~~~~~~~~~~"  
+install(){
+	echo "~~~~~~~~~~"
+	echo "Installing $1"
+	echo "~~~~~~~~~~"
+    if ! sudo apt-get -y --allow-unauthenticated install $1; then
+        if sudo apt-get -y install -f; then
+            if sudo apt-get -y --allow-unauthenticated install $1; then
+                echo "~~~~~~~~~~"
+                echo "Installed $1"
+                echo "~~~~~~~~~~"
+            else
+                echo "~~~~~~~~~~"
+                echo "Failed to install $1"
+                echo "~~~~~~~~~~"  
+            fi
+        else
+            echo "~~~~~~~~~~"
+            echo "Failed to install $1"
+            echo "~~~~~~~~~~" 
+        fi
+    else
+        echo "~~~~~~~~~~"
+        echo "Failed to install $1"
+        echo "~~~~~~~~~~"
+    fi
+}
 
-#Install git
-echo "~~~~~~~~~~"
-echo "Installing git"
-echo "~~~~~~~~~~"
-sudo apt-get -y install git
-echo "~~~~~~~~~~"
-echo "Installed git"
-echo "~~~~~~~~~~"
+
+
+install software-properties-common
+install git
+
+#Add required repositories
+##Spotify
+sudo apt-add-repository -y "deb http://repository.spotify.com stable non-free"
+##Notepadqq
+sudo add-apt-repository -y ppa:notepadqq-team/notepadqq
+
+install notepadqq
+install spotify-client
+
 
 #Install Google Chrome
 echo "~~~~~~~~~~"
@@ -47,45 +71,6 @@ fi
 sudo rm google-chrome*.deb
 
 
-#Install Notepadqq
-echo "~~~~~~~~~~"
-echo "Installing Notepadqq"
-echo "~~~~~~~~~~"
-if ! sudo add-apt-repository -y ppa:notepadqq-team/notepadqq; then
-    echo "~~~~~~~~~~"
-    echo "Failed to install Notepadqq"
-    echo "~~~~~~~~~~"
-else
-    sudo apt-get update
-    sudo apt-get -y install notepadqq
-    echo "~~~~~~~~~~"
-    echo "Installed Notepadqq"
-    echo "~~~~~~~~~~"
-fi
-
-
-#Install Spotify
-echo "~~~~~~~~~~"
-echo "Installing Spotify"
-echo "~~~~~~~~~~"
-
-if sudo apt-add-repository -y "deb http://repository.spotify.com stable non-free"; then
-    sudo apt-get update
-    if sudo apt-get -y --allow-unauthenticated install spotify-client; then
-        echo "~~~~~~~~~~"
-        echo "Installed Spotify"
-        echo "~~~~~~~~~~"
-    else
-        echo "~~~~~~~~~~"
-        echo "Failed to install Spotify"
-        echo "~~~~~~~~~~"
-    fi
-else
-    echo "~~~~~~~~~~"
-    echo "Failed to install Spotify"
-    echo "~~~~~~~~~~"
-fi
-
 
 #Install PyCharm
 echo "~~~~~~~~~~"
@@ -114,4 +99,4 @@ else
 fi
 
 #Upgrade all packages
-sudo apt-get upgrade
+sudo apt-get -y upgrade

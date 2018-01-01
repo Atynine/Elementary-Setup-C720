@@ -82,8 +82,8 @@ xkb_symbols "editing" {
     key <PGDN> {	[  Next			]	};
 
     // added by Captain
-    key <FK01> { 	[XF86Back, NoSymbol, NoSymbol, NoSymbol, F1] 			};
-    key <FK02> { 	[XF86Forward, NoSymbol, NoSymbol, NoSymbol, F2] 		};
+    key <FK01> { 	[XF86AudioPrev, NoSymbol, NoSymbol, NoSymbol, F1] 			};
+    key <FK02> { 	[XF86AudioNext, NoSymbol, NoSymbol, NoSymbol, F2] 		};
     key <FK03> { 	[XF86Refresh, NoSymbol, NoSymbol, NoSymbol, F3] 		};
     key <FK04> { 	[Print, NoSymbol, NoSymbol, NoSymbol, F4] 			};
     key <FK05> { 	[Super_L, NoSymbol, NoSymbol, NoSymbol, F5] 			};
