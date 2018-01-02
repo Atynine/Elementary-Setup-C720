@@ -5,6 +5,7 @@ Sets Elementary OS preferences and installs software for an Acer C720
 * Removes guest account
 * Changes trackpad sensitivity to be more like chromeos
 * Rebinds the media-key row to Escape-Home-End-Refresh-Screenshot-Command-BrightnessDown-BrightnessUp-AudioMute-AudioDecrease-AudioIncrease-Power
+* Rebinds the power key to backspace
 * Binds terminal to open on Ctrl+T
 * Binds switch to right workspace to Ctrl+Right
 * Binds switch to left workspace to Ctrl+Left
