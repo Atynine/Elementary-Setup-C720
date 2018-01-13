@@ -17,7 +17,8 @@ Sets Elementary OS preferences and installs software for an Acer C720
 * Keepass2
 * PyCharm
 * Spotify
-* Google Chrome
+* ~~Google Chrome~~
+* Firefox
 * Notepadqq
 * Git
 ## Removes

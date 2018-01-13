@@ -37,40 +37,12 @@ sudo apt-add-repository -y "deb http://repository.spotify.com stable non-free"
 ##Notepadqq
 sudo add-apt-repository -y ppa:notepadqq-team/notepadqq
 
+install libxss1
+install libappindicator1
+install libindicator7
 install notepadqq
 install spotify-client
-
-
-#Install Google Chrome
-echo "~~~~~~~~~~"
-echo "Installing Google Chrome"
-echo "~~~~~~~~~~"
-
-sudo apt-get install libxss1 libappindicator1 libindicator7
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-
-if ! sudo dpkg -i google-chrome*.deb; then
-    echo "~~~~~~~~~~"
-    echo "Installing Google Chrome Prerequisites"
-    echo "~~~~~~~~~~"
-    sudo apt-update
-    sudo apt-get -y install -f
-    if ! sudo dpkg -i google-chrome*.deb; then
-        echo "~~~~~~~~~~"
-        echo "Failed to install Google Chrome"
-        echo "~~~~~~~~~~"
-    else
-        echo "~~~~~~~~~~"
-        echo "Installed Google Chrome"
-        echo "~~~~~~~~~~"
-    fi
-else
-    echo "~~~~~~~~~~"
-    echo "Installed Google Chrome"
-    echo "~~~~~~~~~~"
-fi
-sudo rm google-chrome*.deb
-
+install firefox
 
 
 #Install PyCharm
